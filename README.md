@@ -41,3 +41,31 @@ A **full-stack User Management System** built using the **MERN (MongoDB, Express
 - **Formik & Yup** – Form Handling & Validation  
 
 ---
+
+## **📩 Postman API Collection**  
+
+The API request collection is available in the repository.  
+
+1. **Import into Postman** – Open Postman and import the JSON collection file.  
+2. **Setup Environment Variables** – Configure:  
+   - `baseUrl`: Set this to your backend URL.  
+   - `token`: Use the JWT token after login to authenticate API requests.  
+
+---
+
+## **🚀 Setup & Run the Backend**  
+1. cd backend
+2. npm install            # Install dependencies
+3. npm run dev            # Start development server
+
+    - it will run the backend on port 5000.
+
+
+## **🚀 Setup & Run the Frontend**  
+1. cd frontend
+2. npm install            # Install dependencies
+3. npm run start            # Start development 
+
+    - it will run the frontend on port 3000.
+
+
