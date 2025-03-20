@@ -1,0 +1,16 @@
+{
+  "name": "user-management-system",
+  "version": "1.0.0",
+  "description": "A **full-stack User Management System** built using the **MERN (MongoDB, Express.js, React, Node.js) stack** with **TypeScript**. It provides secure authentication, role-based access control (RBAC), and a clean UI for managing users, roles, and permissions.",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "cd backend && npm install",
+    "start-server": "cd backend && npm run dev",
+    "install-client": "cd frontend && npm install",
+    "build-client": "cd frontend && npm run build",
+    "start-client": "cd frontend && npm run start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
