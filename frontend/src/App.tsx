@@ -14,11 +14,20 @@ import PermissionsPage from "./pages/permissions";
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"))
   const { data: userProfileData } = useGetProfileQuery({}, { skip: !localStorage.getItem("token") });
+
+
   useEffect(() => {
-    if (token) {
-      setToken(token)
-    }
-  }, [localStorage.getItem("token")])
+    const handleStorageChange = () => {
+      setToken(localStorage.getItem("token"));
+    };
+
+    // Listen for token changes
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
 
   return (
     <>
@@ -27,9 +36,8 @@ function App() {
         <Routes>
           <Route path="/" element={token ? <Navigate to="/dashboard" replace /> : <Navigate to="/login" replace />} />
 
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-
+          <Route path="/login" element={token ? <Navigate to="/dashboard" replace /> : <Login />} />
+          <Route path="/register" element={token ? <Navigate to="/dashboard" replace /> : <Register />} />
 
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" element={<Dashboard />} />
