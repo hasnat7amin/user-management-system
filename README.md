@@ -77,15 +77,15 @@ The API request collection is available in the repository.
 
 ## **Accounts**
 
-# ***Admin***
+### ***Admin***
 
     email - admin@gmail.com
     password - admin123
 
-# ***Manager***
+### ***Manager***
     email - manager@gmail.com
     password - manager123
 
-# ***User***
+### ***User***
     email - user@gmail.com
     password - user123
