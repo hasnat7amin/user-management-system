@@ -10,6 +10,7 @@ import { useGetProfileQuery } from "./redux/apis/userSlice";
 import Users from "./pages/users";
 import RolesPage from "./pages/roles";
 import PermissionsPage from "./pages/permissions";
+import Unauthorized from "./pages/unauthorized";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"))
@@ -38,7 +39,7 @@ function App() {
 
           <Route path="/login" element={token ? <Navigate to="/dashboard" replace /> : <Login />} />
           <Route path="/register" element={token ? <Navigate to="/dashboard" replace /> : <Register />} />
-
+          <Route path="/unauthorized" element={<Unauthorized />} />
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" element={<Dashboard />} />
           </Route>
