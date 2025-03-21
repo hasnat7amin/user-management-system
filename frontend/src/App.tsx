@@ -37,8 +37,8 @@ function App() {
         <Routes>
           <Route path="/" element={token ? <Navigate to="/dashboard" replace /> : <Navigate to="/login" replace />} />
 
-          <Route path="/login" element={token ? <Navigate to="/dashboard" replace /> : <Login />} />
-          <Route path="/register" element={token ? <Navigate to="/dashboard" replace /> : <Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/unauthorized" element={<Unauthorized />} />
           <Route element={<ProtectedRoute />}>
             <Route path="/dashboard" element={<Dashboard />} />
